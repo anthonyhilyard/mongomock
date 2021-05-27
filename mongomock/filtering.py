@@ -370,3 +370,16 @@ TYPE_MAP = {
     "minKey": None,
     "maxKey": None,
 }
+
+
+def resolve_key(key, doc):
+    return next(iter(iter_key_candidates(key, doc)), NOTHING)
+
+
+def resolve_sort_key(key, doc):
+    value = resolve_key(key, doc)
+    # see http://docs.mongodb.org/manual/reference/method/cursor.sort/#ascending-descending-sort
+    if value is NOTHING:
+        return 0, value
+
+    return 1, value

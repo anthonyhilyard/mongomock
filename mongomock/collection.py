@@ -53,6 +53,7 @@ from mongomock.command_cursor import CommandCursor
 from mongomock import ConfigurationError, DuplicateKeyError, BulkWriteError
 from mongomock.filtering import filter_applies
 from mongomock.filtering import iter_key_candidates
+from mongomock.filtering import resolve_sort_key
 from mongomock import helpers
 from mongomock import InvalidOperation
 from mongomock import ObjectId
